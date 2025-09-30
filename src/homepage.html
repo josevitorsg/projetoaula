@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagina Inicial</title>
+  </head>
+  <body>
+    <header><strong>Pagina Inicial</strong></header>
+    <h1>NULL</h1>
+
+    <div class="container">
+      <p onclick="mudarPagina('moises')">Moisés</p>
+      <p onclick="mudarPagina('kauan')">Kauan</p>
+      <p onclick="mudarPagina('jose')">José</p>
+    </div>
+
+    <div class="container">
+      <p id="mensagem"></p>
+    </div>
+
+    <footer>&copy; JMK Todos direitos reservados.</footer>
+
+    <script>
+      async function mudarPagina() {
+        try {
+          document.getElementById("mensagem").innerHTML = "Carregando...";
+
+          await new Promise((carrega) => setTimeout(carrega, 2000));
+          let paginas = {};
+
+          window.location.href = "/src/jose/passwordgen.html";
+        } catch (error) {
+          console.log("ERRO", error);
+        }
+      }
+    </script>
+  </body>
+</html>
